@@ -110,7 +110,7 @@
 
 **Methods**:  
     - **self.print_encoding**()   
-
+  
 **\_\_init\_\_**(states=None, initState=None, goalState=None, stepCosts=None, heuristics=None, show_progress=False)  
 
 **print_encoding**()    
@@ -163,6 +163,10 @@
     - ls: line style  
     - a: alpha  
     - show: whether to show the plot.  
+
+    - a: alpha
+    - show: whether to show the plot.
+
 
 
 
