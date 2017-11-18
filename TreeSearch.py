@@ -74,6 +74,7 @@ class TreeSearch():
             'parent':[]
         }
         self.tree = [[[self.root]]] # the search tree keeping track of paths
+        self.searchType = 'NotSpecified'
 
 
     def _reset(self):
@@ -100,8 +101,17 @@ class TreeSearch():
 
     def _compare_list(self, list_0, list_1):
         """ compare the 2 lists by first comparing the 1st element, if equal 
-        then comparing the 2nd one and so forth. 
-        Return true if list_0 < list_1. Otherwise return false.
+        then comparing the 2nd one and so forth. Return true if list_0 < 
+        list_1. Otherwise return false.
+
+        inputs:
+        -------
+        - list_0: The 1st list
+        - list_1: the 2nd list
+
+        output:
+        -------
+        - less: the boolean showing whether list_0 < list_1
         """
         for e0, e1 in zip(list_0, list_1):
             if e0 == e1: continue
@@ -215,6 +225,7 @@ class TreeSearch():
         inputs:
         -------
         - current: The node to be expanded.
+
         output:
         -------
         - children: The nodes in children cluster.
@@ -273,6 +284,12 @@ class TreeSearch():
             - maxNodes is set and reached.
             - maxLayers is set and reached.
             - Neither maxNodes or maxLayers is set and goal is found.
+
+        inputs:
+        -------
+        - fringe: The queue to save the frontier nodes
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed.
         """
         print("%s search begins:" % self.searchType)
         self._print_stopCriterion(maxNodes, maxLayers)
@@ -304,6 +321,14 @@ class TreeSearch():
     def _check_goal(self, childrenNodes):
         """ check whether there is goal node in given list of nodes. If so, 
         trace the path and return the goal nodes. Otherwise return empty list.
+
+        inputs:
+        -------
+        - childrenNodes: The list of nodes to check
+
+        output:
+        -------
+        - goalNodes: The goal nodes in the list or empty if no goal node found.
         """
         goalNodes = []
 
@@ -321,6 +346,10 @@ class TreeSearch():
     def _trace_path(self, goalNode):
         """ trace the path up to root with given goal node. And add this path 
         to path collection. Path is a list of nodes.
+
+        inputs:
+        -------
+        - goalNode: The goal node to begin the tracing.
         """
         path = [goalNode]
 
@@ -338,6 +367,11 @@ class TreeSearch():
     def _print_stopCriterion(self, mNodes, mGnrts):
         """ print out the stoping criteria based on the setting of maximal  
         number of nodes and maximal number of generations.
+
+        inputs:
+        -------
+        - mNodes: The maximal number of nodes allowed.
+        - mGnrts: The maximal number of layers allowed. 
         """
         if mNodes == np.inf: mNodes = "infinite"
         else: mNodes = str(mNodes)
@@ -394,9 +428,17 @@ class TreeSearch():
         pprint(pathsInfo)
         
 
-    def plot_tree(self, diameter=50, background='dark', title='search tree',
+    def plot_tree(self, diameter=10, background='dark', title='search tree',
                   ls='-', a=0.8):
         """ plot out the search tree in a polar fig.
+
+        inputs:
+        -------
+        - diameter: The diameter of polar fig
+        - background: The background color, can be either 'light' or 'dark'
+        - title: The title of the fig
+        - ls: The linestype of edges
+        - a: The alpha of nodes and edges.
         """
         params = {'diameter':diameter, 'background':background}
         plot   = visual.PolarPlot(**params)
@@ -417,6 +459,11 @@ class TreeSearch():
     # uninformed search
     def breadthFirstSearch(self, maxNodes=np.inf, maxLayers=np.inf):
         """ perform breadth first search using FIFO as fringe.
+
+        inputs:
+        -------
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed. 
         """
         self.searchType = "BFS"
         fringe = Queue(self.root, q_type='FIFO')
@@ -425,6 +472,11 @@ class TreeSearch():
 
     def depthFirstSearch(self, maxNodes=np.inf, maxLayers=np.inf):
         """ perform Depth First Search using LIFO as fringe.
+
+        inputs:
+        -------
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed. 
         """
         self.searchType = "DFS"
         fringe = Queue(self.root, q_type='LIFO')
@@ -434,6 +486,11 @@ class TreeSearch():
     def uniformCostSearch(self, maxNodes=np.inf, maxLayers=np.inf):
         """ perform Uniform Cost Search using priority queue as fringe and  
         path costs as weight in fringe.
+
+        inputs:
+        -------
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed. 
         """
         self.searchType = "UCS"
         fringe = Queue(self.root, q_type='g')
@@ -443,6 +500,11 @@ class TreeSearch():
     def iterativeDeepeningSearch(self, maxDepth=5):
         """ perform Iterative Deepening Search by iteratively perform DFS with 
         maximal generation increasing.
+
+        inputs:
+        -------
+        - maxDepth: The maximal depth of searching in the last round of 
+            iterative deepening.
         """
         self.searchType = "IDS"
         for i in range(1, maxDepth+1): 
@@ -455,6 +517,11 @@ class TreeSearch():
     def bestFirstSearch(self, maxNodes=np.inf, maxLayers=np.inf):
         """ perform best first search using priority queue as fringe and  
         heuristic cost as weight in fringe.
+
+        inputs:
+        -------
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed. 
         """
         self.searchType = "bestFS"
         fringe = Queue(self.root, q_type='h')
@@ -464,6 +531,11 @@ class TreeSearch():
     def aStarSearch(self, maxNodes=np.inf, maxLayers=np.inf):
         """ perform A star Search using priority queue as fringe and path costs 
         plus heuristic cost as weight in fringe.
+
+        inputs:
+        -------
+        - maxNodes: The maximal number of nodes allowed.
+        - maxLayers: The maximal number of layers allowed. 
         """
         self.searchType = "aStar"
         fringe = Queue(self.root, q_type='g+h')

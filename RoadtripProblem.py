@@ -115,6 +115,10 @@ class RoadtripProblem(TreeSearch):
         """ use adjacency matrix to represent the step costs. Each element of  
         matrix represent the distance between row city and column city. The 
         pair of cities without direct connect will have infinite distance.
+
+        inputs:
+        -------
+        - stepCosts: The step cost between each pair of states. 
         """
         # we set up the matrix with all cities unconnected to each other.
         self.stepCosts = np.full((self.size, self.size), np.inf)
@@ -142,6 +146,16 @@ class RoadtripProblem(TreeSearch):
     def _transition(self, state):
         """ the transition model that takes in a state, return the possible 
         actions, children states and corresponding step costs.
+
+        inputs:
+        -------
+        - state: The state to be expanded.
+
+        output:
+        -------
+        - actions: The actions possible to be applied in current state.
+        - childStates: The successor states result from the actions.
+        - stepcosts: The step cost of each action.
         """
         childStates, actions, stepCosts= [], [], []
         
@@ -159,12 +173,27 @@ class RoadtripProblem(TreeSearch):
 
     def _heuristicCost(self, state):
         """ return the heuristic cost of given state
+
+        inputs:
+        -------
+        - state: The state to be calculated.
         """
         if self.heuristics == None: return 0
         else: return self.heuristics[state]
         
 
     def _isGoal(self, state):
-        """ test whether given state is goal state.
+        """ check whether given state is goal state.
+
+        inputs:
+        -------
+        - state: The state to be checked.
         """
         if state == self.goalState: return True
+
+
+
+
+
+
+

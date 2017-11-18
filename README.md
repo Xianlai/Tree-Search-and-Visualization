@@ -1,13 +1,12 @@
 # General Tree Search and Visualization
 ![](images\cover.jpg)
 ## Abstract
-Searching could be one of the most flexible way to deal with problem that can't be solved directly and exactly. If we know the final goal and want to obtain the path from initial state to goal state, then we need to save the states and orders we explored in a tree structure.
+Searching is one of the most flexible way to deal with problem that can't be solved directly and exactly. By systematically exploring the state space, we will eventually reach the goal state we are looking for. If what we are interested is the path from initial state to goal state, then we need to save the states and orders we explored in a tree structure.
 
-This small project includes implementation of a general tree search algorithm module that can be used for different searching strategies like depth-first search, iterative deepening search, A* search and so on, as well as a visualization module that can plot out the result search tree nicely.
+This small project includes implementation of a general tree search algorithm module that can employ different searching strategies like depth-first search, iterative deepening search, A* search etc. and a visualization module that can visualize the result search tree nicely.
 
 ## Code Example & Docs
-The illustration of how to use these 2 modules to solve specific problem and output the search result to screen or to file is shown in the jupyter notebook. Please refer to **TreeSearch_and_Visualization.ipynb**.
-
+The illustration of how to use these 2 modules to solve specific problem and visualize the search result is shown in the jupyter notebook. Please refer to **TreeSearch_and_Visualization.ipynb**.
 
 ## References:
 - Matplotlib: John D. Hunter. Matplotlib: A 2D Graphics Environment, Computing in Science & Engineering, 9, 90-95 (2007), DOI:10.1109/MCSE.2007.55
