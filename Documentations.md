@@ -164,9 +164,6 @@
     - a: alpha  
     - show: whether to show the plot.  
 
-    - a: alpha
-    - show: whether to show the plot.
-
 
 
 
