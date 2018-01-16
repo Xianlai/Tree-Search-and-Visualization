@@ -201,7 +201,7 @@
 
 
 -----
-##TreeVisual Class
+## TreeVisual Class
 
 **class** `PolarPlot(diameter=20, background='dark')`   
 
