@@ -7,7 +7,7 @@ class--TreeSearch class.
 Author: Xian Lai
 Date: Sep.14, 2017
 """
-from TreeSearch import TreeSearch
+from tree_search_plot import TreeSearch
 import numpy as np
 
 # collect the useful information from the problem and the maps including:

@@ -142,68 +142,9 @@
 
 
 -----
-## RoadtripProblem class  
-\*This class is the child class of TreeSearch class. So it has all the attributes as well as methods shown above.  
-
-**class** `SpecificProblem(states=None, initState=None, goalState=None, stepCosts=None, heuristics=None, show_progress=False)` 
-
-#### Parameters:  
-- **initState**: 
-    The initial state as the root 
-
-- **goalState**: 
-    The goal state  
-
-- **states**: 
-    All the states in the problem environment  
-
-- **stepCosts**: 
-    The step costs from a state to another state  
-
-- **heuristics**: 
-    The heuristics from a state to goal state  
-
-- **show_process**: 
-    A boolean value. If true, the algorithm will print the intermediate search process on the screen.  
-  
-
-#### Attributes:  
-- **``self.states``**: 
-    All the states in the problem environment  
-
-- **``self.size``**: 
-    The number of all possible states  
-
-- **``self.goalState``**: 
-    The goal state.  
-
-- **``self.heuristics``**: 
-    The heuristics of each state  
-
-- **``self.encoding``**: 
-    The encoding from states to integers  
-
-- **``self.decoding``**: 
-    The decoding from integers to states.  
-
-- **``self.stepCosts``**: 
-    The step cost between each pair of states.   
-
-#### Methods: 
-```python
-- self.print_encoding()
-```
-
-**``__init__(states=None, initState=None, goalState=None, stepCosts=None, heuristics=None, show_progress=False)``**  
-
-**``self.print_encoding()``**      
-    Print out the encodings from states to integers.  
-
-
------
 ## TreeVisual Class
 
-**class** `PolarPlot(diameter=20, background='dark')`   
+**class** `TreeVisual(diameter=20, background='dark')`   
 
 #### Parameters:  
 - **diameter**: 
@@ -289,5 +230,63 @@
     - show: whether to show the plot.  
 
 
+
+-----
+## RoadtripProblem class  
+\*This class is the child class of TreeSearch class. So it has all the attributes as well as methods shown above.  
+
+**class** `SpecificProblem(states=None, initState=None, goalState=None, stepCosts=None, heuristics=None, show_progress=False)` 
+
+#### Parameters:  
+- **initState**: 
+    The initial state as the root 
+
+- **goalState**: 
+    The goal state  
+
+- **states**: 
+    All the states in the problem environment  
+
+- **stepCosts**: 
+    The step costs from a state to another state  
+
+- **heuristics**: 
+    The heuristics from a state to goal state  
+
+- **show_process**: 
+    A boolean value. If true, the algorithm will print the intermediate search process on the screen.  
+  
+
+#### Attributes:  
+- **``self.states``**: 
+    All the states in the problem environment  
+
+- **``self.size``**: 
+    The number of all possible states  
+
+- **``self.goalState``**: 
+    The goal state.  
+
+- **``self.heuristics``**: 
+    The heuristics of each state  
+
+- **``self.encoding``**: 
+    The encoding from states to integers  
+
+- **``self.decoding``**: 
+    The decoding from integers to states.  
+
+- **``self.stepCosts``**: 
+    The step cost between each pair of states.   
+
+#### Methods: 
+```python
+- self.print_encoding()
+```
+
+**``__init__(states=None, initState=None, goalState=None, stepCosts=None, heuristics=None, show_progress=False)``**  
+
+**``self.print_encoding()``**      
+    Print out the encodings from states to integers.  
 
 
