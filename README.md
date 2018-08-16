@@ -1,11 +1,17 @@
 # Tree Search Algorithm and Visualization  
+## 树式搜寻算法和结果可视化
+
 ### Xian Lai
+### 赖献
+
 xian_lai@126.com
 
 =======================================================
 ![](images/cover_tree_search.png)
 
-# Abstract
+## Abstract
+## 概要
+
 Searching is one of the most flexible way to deal with problem that can't be solved directly and exactly. By systematically exploring the state space, we will eventually reach the goal state we are looking for. If what we are interested is the path from initial state to goal state, then we need to save the states and orders we explored in a tree data structure. 
 
 A wide range of searching algorithms like depth-first search, iterative deepening search, A* search etc. are developed for searching strategy for a long time. However, there is no visualization tools that shows the searching result nicely, intuitively and efficiently. The existing visualization tools of tree structure like plotly which expand the tree down-ward or right-ward are not suitable for the result tree structure of a searching algorithm because:  
@@ -22,10 +28,15 @@ The coloring of the nodes and edges are designed based on searching algorithm as
 
 
 
-# Package 
+## Python Package 
+## Python包
+
 #### Name: 
+#### 名字：
 tree_search_plot
+
 #### Modules:
+#### 模块：
 - **TreeSearch**  
     This module implements the general tree search class that performs basic operations like expand node, evaluate state, append new nodes to tree as well as searching strategies like depth first search, breath first search and so on. It should be used as parent class for specific problem instance.
     And it requires this instance to have the following methods:
@@ -125,7 +136,8 @@ tree_search_plot
 For more detail informations about the attributes and methods of these modules, please look at the **Documentations.md** file.
 
 
-# Example problem:
+## Example problem:
+## 应用示例
 
 **In the rest of this documentation, we will illustrate how to use this module through an example problem--Romania road trip problem described in Stuart Russell and Peter Norvig's book [Artificial Intelligence: a Modern Approach, 2010].**
 
@@ -228,6 +240,7 @@ class RoadtripProblem(TreeSearch):
 ```
 
 ### 1. Searching
+### 1. 搜寻
 We first initialize the problem instance with initstate and goalstate as inputs.
 
 ```python
@@ -349,6 +362,7 @@ Finally, we can choose to write the searching result as JSON file in current dir
 
 
 ### 2. Tree Visual
+### 2. 可视化
 We can only choose to use the TreeVisual module if we already have the tree. But this requires the tree to have the same format and information as the result of TreeSearch module. For the details of required format, please look at the documentation.
 
 ```python
@@ -371,6 +385,7 @@ We can only choose to use the TreeVisual module if we already have the tree. But
 
 
 ## Dependencies:
+## 所使用的Python库
 Running the notebook requires following Python libraries installed:
 
     - numpy   
@@ -378,12 +393,14 @@ Running the notebook requires following Python libraries installed:
 
 
 ## References:
+## 引用
 - Matplotlib: John D. Hunter. Matplotlib: A 2D Graphics Environment, Computing in Science & Engineering, 9, 90-95 (2007), DOI:10.1109/MCSE.2007.55
 
 - NumPy & SciPy: Stéfan van der Walt, S. Chris Colbert and Gaël Varoquaux. The NumPy Array: A Structure for Efficient Numerical Computation, Computing in Science & Engineering, 13, 22-30 (2011), DOI:10.1109/MCSE.2011.37
 
 
 ## License
+## 版权许可证
 MIT License
 
 Copyright (c) [2017] [Xian Lai]
@@ -401,7 +418,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-# Contact
+## Contact
+## 联系方式
 Xian Lai    
 
 xian_lai@126.com
